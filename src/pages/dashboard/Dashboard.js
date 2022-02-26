@@ -20,9 +20,9 @@ export default function Dashboard() {
   
   const projects = documents ? documents.filter(document => {
     switch(filter) {
-      case 'All':
+      case 'all':
         return true
-      case 'Mine':
+      case 'mine':
         let assignedToMe = false
         document.assignedUsersList.forEach(u => {
           if(u.id === user.uid) {
@@ -30,10 +30,10 @@ export default function Dashboard() {
           }
         })
         return assignedToMe
-      case 'Development':
-      case 'Design':
-      case 'Sales':
-      case 'Marketing':
+      case 'development':
+      case 'design':
+      case 'sales':
+      case 'marketing':
         console.log(document.category, filter)
         return document.category === filter
       default:
